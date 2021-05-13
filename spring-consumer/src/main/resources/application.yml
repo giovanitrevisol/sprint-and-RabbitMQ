@@ -1,0 +1,23 @@
+server:
+  port: 8082
+
+#RabbitMQ
+# A porta 15672 é a porta da interface grafica
+# A porta onde do Rabbitmq esta rodando é a 5672
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    request:
+      exchenge:
+        producer: ex.producer.aula-spring
+      routing-key:
+        producer: rk.producer.aula-spring
+      dead-letter:
+        producer: dl.producer.aula-spring
+      parking-lot:
+        producer: pl.producer.aula-spring
+    listener:
+      time-retry: 00 39 22 * * *
